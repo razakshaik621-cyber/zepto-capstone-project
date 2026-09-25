@@ -1,0 +1,9 @@
+﻿fastapi
+uvicorn[standard]
+pydantic
+langgraph
+chromadb
+sentence-transformers
+scikit-learn
+joblib
+groq
