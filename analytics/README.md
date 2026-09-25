@@ -135,15 +135,25 @@ The first pair has the largest absolute off-diagonal correlation in the required
 
 ### Chart 1 — Survival by Sex
 
+![Survival by Sex](charts/survival_by_sex.png)
+
 The chart shows survival probability broken down by sex. The difference indicates that sex was strongly associated with survival in the Titanic data. This relationship is also reflected in the classification features.
 
 ### Chart 2 — Survival by Passenger Class
+
+![Survival by Passenger Class](charts/survival_by_pclass.png)
 
 The chart shows survival probability across passenger classes. Survival rates differ across Pclass, indicating that passenger class provides useful information about survival outcomes.
 
 ### Chart 3 — Survival by Sex and Passenger Class
 
-Combining sex and Pclass reveals that survival patterns are not explained by one variable alone. The interaction between these two characteristics gives a more detailed view of which passenger groups experienced different survival rates.
+![Survival by Sex and Passenger Class](charts/survival_by_sex_pclass.png)
+
+The chart combines sex and passenger class to show how survival probability varied across these two factors. Survival rates differed between male and female passengers across passenger classes. This multivariate view provides more detail than examining sex or passenger class separately and shows how the two features were associated with survival outcomes.
+
+Overall, the chart indicates that both Sex and Pclass provide useful information for understanding survival patterns in the Titanic dataset.
+
+
 
 ### Chart 4 — Age and Survival
 
@@ -171,7 +181,12 @@ This standardization check was exploratory only and was not used as the modeling
 
 The classification target is `survived`.
 
-Stratification was used so that the training and testing sets retain approximately the same class distribution as the original target. This is important because the survival classes are not perfectly balanced.
+Before splitting, the cleaned dataset contained:
+
+- Class 0 (Not Survived): 549 rows (61.75%)
+- Class 1 (Survived): 340 rows (38.25%)
+
+The target classes are not perfectly balanced. Therefore, stratified train-test splitting was used so that the training and testing sets retain approximately the same class distribution as the original cleaned dataset. This reduces the risk of obtaining a test set with a substantially different class distribution.
 
 ## Task 8 — Preprocessing
 
