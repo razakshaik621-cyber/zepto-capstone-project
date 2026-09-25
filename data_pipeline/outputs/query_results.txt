@@ -1,0 +1,166 @@
+====================================================
+ZEPTO DATA PIPELINE - SQL QUERY RESULTS
+====================================================
+
+--- Query_1_SELECT_WHERE_ORDER_BY_LIMIT ---
+SQL:
+SELECT title, price_inr
+        FROM books
+        WHERE price_inr > 1500
+        ORDER BY price_inr DESC
+        LIMIT 5;
+
+OUTPUT:
+                                                                                                                          title  price_inr
+                                                                                   The Death of Humanity: and the Case for Life   6130.605
+                                                                                                 Slow States of Collapse: Poems   6046.205
+                                             Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991   6039.875
+                                                                                                            The Past Never Ends   5960.750
+The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!   5951.255
+
+============================================================
+
+--- Query_2_DISTINCT ---
+SQL:
+SELECT DISTINCT rating
+        FROM books
+        ORDER BY rating ASC;
+
+OUTPUT:
+ rating
+      1
+      2
+      3
+      4
+      5
+
+============================================================
+
+--- Query_3_IN_BETWEEN ---
+SQL:
+SELECT title, rating, price_gbp
+        FROM books
+        WHERE rating IN (4, 5)
+        AND price_gbp BETWEEN 10 AND 50
+        ORDER BY price_gbp ASC
+        LIMIT 5;
+
+OUTPUT:
+                                                                              title  rating  price_gbp
+                                   Princess Between Worlds (Wide-Awake Princess #5)       5      13.34
+  Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)       5      13.61
+Mama Tried: Traditional Italian Cooking for the Screwed, Crude, Vegan, and Tattooed       4      14.02
+                                            Untitled Collection: Sabbath Poems 2014       4      14.27
+                             Outcast, Vol. 1: A Darkness Surrounds Him (Outcast #1)       4      15.44
+
+============================================================
+
+--- Query_4_AGGREGATION ---
+SQL:
+SELECT
+            c.category_name,
+            COUNT(b.book_id) AS total_books,
+            ROUND(AVG(b.price_gbp), 2) AS average_price_gbp
+        FROM categories c
+        JOIN books b
+            ON c.category_id = b.category_id
+        GROUP BY c.category_id, c.category_name
+        ORDER BY total_books DESC;
+
+OUTPUT:
+     category_name  total_books  average_price_gbp
+    Sequential Art           14              31.91
+        Nonfiction           12              32.48
+           Default            9              26.85
+            Poetry            7              36.24
+           Fiction            5              43.87
+    Food and Drink            5              34.89
+     Add a comment            5              30.34
+           History            4              33.94
+       Young Adult            4              25.05
+           Fantasy            4              28.38
+           Mystery            3              41.32
+             Music            3              43.20
+          Thriller            3              29.63
+         Childrens            3              49.22
+   Science Fiction            2              36.63
+           Romance            2              29.90
+      Spirituality            2              24.95
+        Philosophy            2              37.02
+Historical Fiction            1              53.74
+          Business            1              33.34
+          Politics            1              51.33
+            Travel            1              45.17
+               Art            1              44.18
+         New Adult            1              45.07
+      Contemporary            1              31.77
+           Science            1              42.96
+            Health            1              49.05
+            Horror            1              39.25
+         Self Help            1              46.35
+
+============================================================
+
+--- Query_5_PK_FK_JOIN ---
+SQL:
+SELECT
+            b.title,
+            b.price_inr,
+            b.rating,
+            c.category_name
+        FROM books b
+        JOIN categories c
+            ON b.category_id = c.category_id
+        ORDER BY
+            b.rating DESC,
+            b.price_inr ASC
+        LIMIT 10;
+
+OUTPUT:
+                                                                             title  price_inr  rating  category_name
+                                  Princess Between Worlds (Wide-Awake Princess #5)   1407.370       5        Fantasy
+ Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)   1435.855       5 Sequential Art
+                                                                    Sophie's World   1681.670       5     Philosophy
+                                                                            Thirst   1821.985       5        Fiction
+                                                                       Set Me Free   1842.030       5    Young Adult
+                        The Four Agreements: A Practical Guide to Personal Freedom   1863.130       5   Spirituality
+The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer   2172.245       5        Default
+                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.   2438.105       5     Nonfiction
+                                                                 The Elephant Tree   2513.010       5       Thriller
+                                                        Chase Me (Paris Nights #2)   2665.985       5        Romance
+
+============================================================
+
+
+====================================================
+SQL pd.read_sql OUTPUT
+====================================================
+                                                                             title  price_inr  rating  category_name
+                                  Princess Between Worlds (Wide-Awake Princess #5)   1407.370       5        Fantasy
+ Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)   1435.855       5 Sequential Art
+                                                                    Sophie's World   1681.670       5     Philosophy
+                                                                            Thirst   1821.985       5        Fiction
+                                                                       Set Me Free   1842.030       5    Young Adult
+                        The Four Agreements: A Practical Guide to Personal Freedom   1863.130       5   Spirituality
+The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer   2172.245       5        Default
+                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.   2438.105       5     Nonfiction
+                                                                 The Elephant Tree   2513.010       5       Thriller
+                                                        Chase Me (Paris Nights #2)   2665.985       5        Romance
+
+====================================================
+PANDAS pd.merge OUTPUT
+====================================================
+                                                                             title  price_inr  rating  category_name
+                                  Princess Between Worlds (Wide-Awake Princess #5)   1407.370       5        Fantasy
+ Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)   1435.855       5 Sequential Art
+                                                                    Sophie's World   1681.670       5     Philosophy
+                                                                            Thirst   1821.985       5        Fiction
+                                                                       Set Me Free   1842.030       5    Young Adult
+                        The Four Agreements: A Practical Guide to Personal Freedom   1863.130       5   Spirituality
+The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer   2172.245       5        Default
+                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.   2438.105       5     Nonfiction
+                                                                 The Elephant Tree   2513.010       5       Thriller
+                                                        Chase Me (Paris Nights #2)   2665.985       5        Romance
+
+EXACT MATCH VERIFICATION: True
+SQL JOIN and pandas.merge are equivalent.
