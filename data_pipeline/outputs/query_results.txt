@@ -12,11 +12,11 @@ SELECT title, price_inr
 
 OUTPUT:
                                                                                                                           title  price_inr
-                                                                                   The Death of Humanity: and the Case for Life   6130.605
-                                                                                                 Slow States of Collapse: Poems   6046.205
-                                             Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991   6039.875
-                                                                                                            The Past Never Ends   5960.750
-The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!   5951.255
+                                                                                   The Death of Humanity: and the Case for Life    6130.60
+                                                                                                 Slow States of Collapse: Poems    6046.20
+                                             Our Band Could Be Your Life: Scenes from the American Indie Underground, 1981-1991    6039.88
+                                                                                                            The Past Never Ends    5960.75
+The Pioneer Woman Cooks: Dinnertime: Comfort Classics, Freezer Food, 16-Minute Meals, and Other Delicious Ways to Solve Supper!    5951.25
 
 ============================================================
 
@@ -118,16 +118,16 @@ SELECT
 
 OUTPUT:
                                                                              title  price_inr  rating  category_name
-                                  Princess Between Worlds (Wide-Awake Princess #5)   1407.370       5        Fantasy
- Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)   1435.855       5 Sequential Art
-                                                                    Sophie's World   1681.670       5     Philosophy
-                                                                            Thirst   1821.985       5        Fiction
-                                                                       Set Me Free   1842.030       5    Young Adult
-                        The Four Agreements: A Practical Guide to Personal Freedom   1863.130       5   Spirituality
-The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer   2172.245       5        Default
-                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.   2438.105       5     Nonfiction
-                                                                 The Elephant Tree   2513.010       5       Thriller
-                                                        Chase Me (Paris Nights #2)   2665.985       5        Romance
+                                  Princess Between Worlds (Wide-Awake Princess #5)    1407.37       5        Fantasy
+ Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)    1435.86       5 Sequential Art
+                                                                    Sophie's World    1681.67       5     Philosophy
+                                                                            Thirst    1821.98       5        Fiction
+                                                                       Set Me Free    1842.03       5    Young Adult
+                        The Four Agreements: A Practical Guide to Personal Freedom    1863.13       5   Spirituality
+The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer    2172.24       5        Default
+                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.    2438.10       5     Nonfiction
+                                                                 The Elephant Tree    2513.01       5       Thriller
+                                                        Chase Me (Paris Nights #2)    2665.98       5        Romance
 
 ============================================================
 
@@ -136,31 +136,31 @@ The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Long
 SQL pd.read_sql OUTPUT
 ====================================================
                                                                              title  price_inr  rating  category_name
-                                  Princess Between Worlds (Wide-Awake Princess #5)   1407.370       5        Fantasy
- Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)   1435.855       5 Sequential Art
-                                                                    Sophie's World   1681.670       5     Philosophy
-                                                                            Thirst   1821.985       5        Fiction
-                                                                       Set Me Free   1842.030       5    Young Adult
-                        The Four Agreements: A Practical Guide to Personal Freedom   1863.130       5   Spirituality
-The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer   2172.245       5        Default
-                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.   2438.105       5     Nonfiction
-                                                                 The Elephant Tree   2513.010       5       Thriller
-                                                        Chase Me (Paris Nights #2)   2665.985       5        Romance
+                                  Princess Between Worlds (Wide-Awake Princess #5)    1407.37       5        Fantasy
+ Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)    1435.86       5 Sequential Art
+                                                                    Sophie's World    1681.67       5     Philosophy
+                                                                            Thirst    1821.98       5        Fiction
+                                                                       Set Me Free    1842.03       5    Young Adult
+                        The Four Agreements: A Practical Guide to Personal Freedom    1863.13       5   Spirituality
+The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer    2172.24       5        Default
+                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.    2438.10       5     Nonfiction
+                                                                 The Elephant Tree    2513.01       5       Thriller
+                                                        Chase Me (Paris Nights #2)    2665.98       5        Romance
 
 ====================================================
 PANDAS pd.merge OUTPUT
 ====================================================
                                                                              title  price_inr  rating  category_name
-                                  Princess Between Worlds (Wide-Awake Princess #5)   1407.370       5        Fantasy
- Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)   1435.855       5 Sequential Art
-                                                                    Sophie's World   1681.670       5     Philosophy
-                                                                            Thirst   1821.985       5        Fiction
-                                                                       Set Me Free   1842.030       5    Young Adult
-                        The Four Agreements: A Practical Guide to Personal Freedom   1863.130       5   Spirituality
-The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer   2172.245       5        Default
-                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.   2438.105       5     Nonfiction
-                                                                 The Elephant Tree   2513.010       5       Thriller
-                                                        Chase Me (Paris Nights #2)   2665.985       5        Romance
+                                  Princess Between Worlds (Wide-Awake Princess #5)    1407.37       5        Fantasy
+ Princess Jellyfish 2-in-1 Omnibus, Vol. 01 (Princess Jellyfish 2-in-1 Omnibus #1)    1435.86       5 Sequential Art
+                                                                    Sophie's World    1681.67       5     Philosophy
+                                                                            Thirst    1821.98       5        Fiction
+                                                                       Set Me Free    1842.03       5    Young Adult
+                        The Four Agreements: A Practical Guide to Personal Freedom    1863.13       5   Spirituality
+The Inefficiency Assassin: Time Management Tactics for Working Smarter, Not Longer    2172.24       5        Default
+                #HigherSelfie: Wake Up Your Life. Free Your Soul. Find Your Tribe.    2438.10       5     Nonfiction
+                                                                 The Elephant Tree    2513.01       5       Thriller
+                                                        Chase Me (Paris Nights #2)    2665.98       5        Romance
 
 EXACT MATCH VERIFICATION: True
 SQL JOIN and pandas.merge are equivalent.

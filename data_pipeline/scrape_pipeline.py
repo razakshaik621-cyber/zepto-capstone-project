@@ -642,8 +642,7 @@ def clean_data(df_raw):
     df["price_inr"] = (
         df["price_gbp"]
         * GBP_TO_INR
-    )
-
+    ).round(2)
     # --------------------------------------------------------
     # Final column order
     # --------------------------------------------------------
@@ -725,7 +724,7 @@ def validate_clean_dataset(df):
     expected_inr = (
         df["price_gbp"]
         * GBP_TO_INR
-    )
+    ).round(2)
 
     assert (
         (df["price_inr"] - expected_inr)
